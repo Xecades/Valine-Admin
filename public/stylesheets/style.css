@@ -1,11 +1,40 @@
-body {
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue,sans-serif;
-    font-size: 1rem;
+@import url(https://fonts.loli.net/css2?family=EB+Garamond:ital,wght@0,400;0,500&family=Noto+Serif+SC:wght@300;400;500;700&display=swap);
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    display: none !important;
+}
+
+* {
+    font-family: "EB Garamond", "Noto Serif SC", source-han-serif-sc,
+        "source han serif sc", "source han serif cn", "source han serif tc",
+        "source han serif tw", "source han serif", songti sc, microsoft yahei,
+        serif;
+}
+
+*::-moz-selection {
+    background-color: rgba(187, 221, 251, 0.5);
+}
+*::selection {
+    background-color: rgba(187, 221, 251, 0.5);
 }
 
 a {
     text-decoration: none;
-    color: #3eb0ef;
+    color: #006faa;
+    opacity: .7;
+    transition: opacity .2s;
+}
+
+a:hover {
+    opacity: 1;
 }
 
 .footer {
@@ -29,7 +58,7 @@ li {
     padding: 0;
 }
 
-.header{
+.header {
     display: flex;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -37,23 +66,30 @@ li {
     justify-content: space-between;
 }
 
-@media screen and (max-width:768px) {
+.comment-main {
+    padding: 3rem 7rem;
+}
+
+@media screen and (max-width: 700px) {
     .comment-main {
-        padding: 1rem;
+        padding: 2rem 2rem !important;
     }
 }
 
-.comment-main{
-    padding: 1rem 5rem;
+.logout-wrapper {
+    width: 6rem;
+    text-align: right;
 }
 
 .vhead {
-    padding-bottom: 0.5rem;
+    line-height: 2rem;
 }
 
-.vhead a , .vhead #nick {
+.vhead a,
+.vhead #nick {
     font-weight: bolder;
     color: #333;
+    opacity: 1;
 }
 
 .spacer {
@@ -73,6 +109,26 @@ li {
     word-wrap: break-word;
 }
 
+.vcomment pre {
+    overflow: scroll;
+    background: #f8fbfd;
+    padding: 1rem;
+}
+
+.vcomment blockquote {
+    border-left: 5px solid #eee;
+    margin-left: 0;
+    padding-left: 15px;
+}
+
+.vcomment pre * {
+    font-family: monospace;
+}
+
+.vemoticon-img {
+    max-height: 40px;
+}
+
 .vcard {
     padding: 2rem 0 2rem 0;
     border-top: 1px solid #dedede;
@@ -80,6 +136,7 @@ li {
 
 .check {
     padding-top: 1rem;
+    line-height: 2rem;
     color: #33b1ff;
 }
 
@@ -87,12 +144,14 @@ li {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
+    position: relative;
     width: 100%;
     color: #738a94;
     font-weight: 100;
     text-align: center;
     align-items: center;
-    margin-top: 4rem;
+    top: 40%;
+    transform: translate(0, -50%);
 }
 
 .gh-signup {
@@ -103,12 +162,18 @@ li {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 1rem 2rem;
+    padding: 18px 36px;
+    margin: 15px;
     width: 320px;
     border: 1px solid #dae1e3;
-    background: #f8fbfd;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: left;
+}
+
+@media screen and (max-width: 422px) {
+    .gh-signin {
+        width: calc(100vw - 2 * 36px - 2 * 15px);
+    }
 }
 
 .gh-signin .form-group {
@@ -130,7 +195,7 @@ li {
     display: block;
     user-select: text;
     border-radius: 4px;
-    transition: border-color .15s linear;
+    transition: border-color 0.15s linear;
     -webkit-appearance: none;
     color: #4b5b62;
     -webkit-user-select: text;
@@ -138,15 +203,15 @@ li {
 
 .sign-in-wrap input:focus {
     border-color: #c4c8cb;
-    outline: 0
+    outline: 0;
 }
 
 .sign-in-wrap .login-button {
     padding: 8px 10px;
     cursor: pointer;
     background: #33b1ff;
-    border: .1rem solid #33b1ff;
-    border-radius: .2rem;
+    border: 0.1rem solid #33b1ff;
+    border-radius: 0.2rem;
     color: #fff;
 }
 
@@ -154,7 +219,7 @@ li {
     color: #ee1000;
 }
 
-.blue{
+.blue {
     padding-left: 9px;
     color: #33b1ff;
 }
